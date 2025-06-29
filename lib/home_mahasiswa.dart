@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'profile_mahasiswa.dart';
 
 class HomeMahasiswa extends StatelessWidget {
-  const HomeMahasiswa({super.key});
+  const HomeMahasiswa({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -153,15 +154,34 @@ class HomeMahasiswa extends StatelessWidget {
           height: 60,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
-              Icon(Icons.home, color: Colors.white, size: 30),
-              Icon(Icons.person, color: Colors.white, size: 30),
+            children: [
+              // Tombol Home
+              IconButton(
+                icon: const Icon(Icons.home, color: Colors.white, size: 30),
+                onPressed: () {
+                  // Sudah di home
+                },
+              ),
+              // Tombol Person bisa diklik
+              IconButton(
+                icon: const Icon(Icons.person, color: Colors.white, size: 30),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProfileMahasiswaPage(),
+                    ),
+                  );
+                },
+              ),
             ],
           ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          // Aksi tombol tengah jika mau
+        },
         backgroundColor: Colors.white,
         child: const Icon(Icons.home, color: Color(0xFF1E88E5)),
       ),
