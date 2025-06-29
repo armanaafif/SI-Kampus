@@ -1,25 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  static const String _title = 'Sistem Informasi Mahasiswa';
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: _title,
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: const LoginPage(),
-    );
-  }
-}
-
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
@@ -55,7 +35,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   const Text(
-                    "di Sistem Informasi Mahasiswa",
+                    "UNiversitas Ngudi Waluyo",
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                 ],
@@ -124,7 +104,7 @@ class LoginPage extends StatelessWidget {
                     TextButton(
                       onPressed: () {},
                       child: const Text(
-                        "Daftar Akun Mahasiswa",
+                        "Login Sebagai Dosen",
                         style: TextStyle(color: Colors.blue),
                       ),
                     ),
