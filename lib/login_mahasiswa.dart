@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'login_dosen.dart';
+import 'home_mahasiswa.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class LoginMahasiswa extends StatelessWidget {
+  const LoginMahasiswa({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -9,10 +11,7 @@ class LoginPage extends StatelessWidget {
       backgroundColor: Colors.blue[700],
       body: Stack(
         children: [
-          // ======= Background Biru =======
           Container(color: Colors.blue[700]),
-
-          // ======= Logo dan Teks di Tengah =======
           Align(
             alignment: Alignment.topCenter,
             child: Padding(
@@ -20,7 +19,6 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Logo UNW
                   Image.network(
                     "https://unw.ac.id/_nuxt/unw.CC306KHJ.png",
                     height: 120,
@@ -35,15 +33,13 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   const Text(
-                    "UNiversitas Ngudi Waluyo",
+                    "Universitas Ngudi Waluyo",
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
                 ],
               ),
             ),
           ),
-
-          // ======= Panel Login Slide-Up =======
           DraggableScrollableSheet(
             initialChildSize: 0.25,
             minChildSize: 0.25,
@@ -86,7 +82,12 @@ class LoginPage extends StatelessWidget {
                       height: 50,
                       child: ElevatedButton(
                         onPressed: () {
-                          // TODO: aksi login
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const HomeMahasiswa(),
+                            ),
+                          );
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue,
@@ -102,13 +103,20 @@ class LoginPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const LoginDosen(),
+                          ),
+                        );
+                      },
                       child: const Text(
                         "Login Sebagai Dosen",
                         style: TextStyle(color: Colors.blue),
                       ),
                     ),
-                    const SizedBox(height: 300), // Agar bisa discroll
+                    const SizedBox(height: 300),
                   ],
                 ),
               );
