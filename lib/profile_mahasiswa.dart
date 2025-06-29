@@ -9,7 +9,13 @@ class ProfileMahasiswaPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[100],
       appBar: AppBar(
-        title: const Text("Profile Mahasiswa"),
+        title: const Text(
+          "Profile Mahasiswa",
+          style: TextStyle(
+            color: Colors.white, // Ubah warna tulisan jadi putih
+            fontWeight: FontWeight.bold, // Opsional: biar lebih tebal
+          ),
+        ),
         backgroundColor: const Color(0xFF1E88E5),
       ),
       body: Column(
@@ -97,7 +103,6 @@ class ProfileMahasiswaPage extends StatelessWidget {
               IconButton(
                 icon: const Icon(Icons.person, color: Colors.white, size: 30),
                 onPressed: () {
-                  // Bisa kasih snackbar biar tidak bingung
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text('Anda sudah berada di halaman profil'),
